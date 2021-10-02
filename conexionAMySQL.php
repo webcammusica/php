@@ -10,6 +10,7 @@
 	
 	$hostname="localhost";
 	$username="id17470503_admini";
+    /* Clave de ejemplo, no es la real*/
 	$password="dy2W]JvfaG&!ij&M";
 	$dbname="id17470503_webcammusica";
 	$usertable="ahorros";
