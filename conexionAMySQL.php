@@ -28,7 +28,7 @@
 	if($result){
 		while($row = mysqli_fetch_array($result)){
 			$name = $row["$yourfield"];
-			echo "Nombre: ".$name."br/>";
+			echo "Nombre: ".$name."<br>";
 		}
 	}
 ?>
