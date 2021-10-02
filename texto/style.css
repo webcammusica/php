@@ -1,0 +1,18 @@
+/*CSS*/
+
+body{
+	background-color: gray;
+}
+
+#container{
+	width: 70%;
+	margin: 0 auto;
+	background-color: #fff;
+	text-align: center;
+	height: 900px;
+	padding: 30px;
+}
+
+#rojo{
+	background-color: red;
+}

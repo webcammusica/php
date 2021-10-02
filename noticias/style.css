@@ -1,0 +1,14 @@
+/*CSS*/
+
+body{
+	background-color: gray;
+}
+
+#container{
+	width: 70%;
+	margin: 0 auto;
+	background-color: #fff;
+
+	height: 900px;
+	padding: 30px;
+}
