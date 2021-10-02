@@ -8,23 +8,23 @@
 	
 	//Conectar a la base de datos
 	
-	$hostname="your_hostname";
-	$username="your_dbusername";
-	$password="your_dbpassword";
-	$dbname="your_dbusername";
-	$usertable="your_tablename";
-	$yourfield = "your_field";
+	$hostname="localhost";
+	$username="id17470503_admini";
+	$password="dy2W]JvfaG&!ij&M";
+	$dbname="id17470503_webcammusica";
+	$usertable="ahorros";
+	$yourfield = "contrapartida";
 	
-	mysqli_connect($hostname,$username, $password) o morir ("html>script language='JavaScript'>alert('¡No es posible conectarse a la base de datos! Vuelve a intentarlo más tarde.'),history.go(-1)/script>/html>");
-	mysqli_select_db($dbname);
+	$con=mysqli_connect($hostname,$username, $password) or die ("html>script language='JavaScript'>alert('¡No es posible conectarse a la base de datos! Vuelve a intentarlo más tarde.'),history.go(-1)/script>/html>");
+	mysqli_select_db($con, $dbname);
 	
 	# Comprobar si existe registro
 	
-	$query = “SELECCIONAR * DESDE $usertable”;
+	$query = "SELECT * FROM $usertable";
 	
-	$result = mysqli_query($query);
+	$result = mysqli_query($con, $query);
 	
-	si($result){
+	if($result){
 		while($row = mysqli_fetch_array($result)){
 			$name = $row["$yourfield"];
 			echo "Nombre: ".$name."br/>";
@@ -33,4 +33,3 @@
 ?>
  </body>
 </html>
-
