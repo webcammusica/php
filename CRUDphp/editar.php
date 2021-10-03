@@ -58,7 +58,6 @@ try {
 } catch(PDOException $error) {
   $resultado['error'] = true;
   $resultado['mensaje'] .= $error->getMessage();
-  //$resultado['mensaje'] = 'sin parámetro';
 }
 ?>
 

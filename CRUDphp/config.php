@@ -8,8 +8,8 @@ funciones CRUD.*/
 return [
   'db' => [
     'host' => 'localhost',
-    'user' => 'id17470503_admini',
-    'pass' => AQUI TU PASSWORD,
+    'user' => /*tu password*/,
+    'pass' => '9*KI9RKxxhJ?Zmd!',
     'name' => 'id17470503_webcammusica',
     'options' => [
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

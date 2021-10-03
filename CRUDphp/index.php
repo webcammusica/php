@@ -54,24 +54,37 @@ if ($error) {
                 ?>
                 <a href="crear.php"  class="btn btn-primary mt-4">Crear alumno</a>
                 <hr/>
-                <form method="post" class="form-inline">
-                    <div class="form-group mr-3">
+                <form method="post">
+                  <div class="form-row">
+                    <div class="form-group col-md-3">
                         <input type="text" id="apellido" name="apellido" placeholder="Buscar por apellido" class="form-control">
                     </div>
-                    <button type="submit" name="submit" class="btn btn-primary">Ver resultados</button>
-                </form>
-                <form method="get" class="form-inline" action="editar.php">
-                     <div class="form-group mr-3">
+                    <div class="form-group col-md-6">
+                     <button type="submit" name="submit" class="btn btn-primary">Ver resultados</button>
+                    </div>
+                  </div>
+                   <hr/>
+                 </form>
+                  <form method="get" action="editar.php" style = display:inline-block>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
                         <input type="text" id="id" name="id" placeholder="Editar por id" class="form-control">
                     </div>
-                    <button type="submit" name="submitEditar" class="btn btn-primary">Editar</button>
-                </form>
-                <form method="get" class="form-inline" action="borrar.php">
-                     <div class="form-group mr-3">
-                        <input type="text" id="idBorrar" name="id" placeholder="Borrar por id" class="form-control">
+                    <div class="form-group col-md-6">
+                     <button type="submit" name="submitEditar" class="btn btn-primary">Editar</button>
                     </div>
-                    <button type="submit" name="submitBorrar" class="btn btn-primary">Borrar</button>
-                </form>
+                  </div>
+                 </form>
+                 <form method="get" action="borrar.php" style = display:inline-block>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" id="id" name="id" placeholder="Borar por id" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                     <button type="submit" name="submitBorrar" class="btn btn-primary">Borrar</button>
+                    </div>
+                  </div>
+                 </form>
             </div>
         </div>
     </div>
@@ -82,18 +95,27 @@ if ($error) {
           <h2 class="mt-3"><?= $titulo ?></h2>
           <table class="table">
             <thead>
+                <style>
+                    th, td{
+                        text-align: center;
+                    }
+                </style>
               <tr>
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
                 <th>Edad</th>
+                <th>Editar</th>
+                <th>Borrar</th>
               </tr>
             </thead>
             <tbody>
               <?php
               if ($alumnos && $sentencia->rowCount() > 0) {
                 foreach ($alumnos as $fila) {
+                    $enlaceEdt="editar.php?id=".$fila["id"];
+                    $enlaceBrr="borrar.php?id=".$fila["id"];
                   ?>
                   <tr>
                     <td><?php echo escapar($fila["id"]); ?></td>
@@ -101,6 +123,8 @@ if ($error) {
                     <td><?php echo escapar($fila["apellido"]); ?></td>
                     <td><?php echo escapar($fila["email"]); ?></td>
                     <td><?php echo escapar($fila["edad"]); ?></td>
+                    <td><a  href=<?= $enlaceEdt ?>  class="btn btn-primary btn-sm"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>Editar alumno</a></td>
+                    <td><a href=<?= $enlaceBrr ?>  class="btn btn-primary btn-sm">Borrar alumno</a></td>
                   </tr>
                   <?php
                 }
